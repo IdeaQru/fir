@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ungkapan Cinta Ku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop preload="auto" muted>
+        <!-- Menggunakan file audio lokal atau URL yang valid -->
+        <source src="love.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Initial Password Screen -->
+    <div id="passwordScreen" class="password-screen">
+        <div class="password-container">
+            <div class="lock-icon">🔒</div>
+            <h2>Masukkan Kode Rahasia</h2>
+            <p class="subtitle">Hanya untuk orang spesial ❤️</p>
+            <div class="input-container">
+                <input type="password" id="passwordInput" placeholder="••••••" maxlength="6">
+                <button onclick="checkPassword()" class="enter-btn">
+                    <span>Masuk</span>
+                    <div class="arrow">→</div>
+                </button>
+            </div>
+            <p id="errorMessage" class="error-message"></p>
+            <div class="hint">💡 Hint: Tanggal istimewa kita (DDMMYY)</div>
+        </div>
+        <div class="floating-hearts">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+        </div>
+    </div>
+
+    <!-- Main Content with Slides -->
+    <div id="mainContent" class="main-content hidden">
+        
+        <!-- Navigation Header -->
+        <div class="slide-header">
+            <div class="slide-counter">
+                <span id="currentSlide">1</span> / <span id="totalSlides">6</span>
+            </div>
+            <div class="main-title">💕 A DAY TO CONFESS FOR FIRA MAULANI PRAMUKTI 💕</div>
+            <div class="music-toggle">
+                <button onclick="toggleMusic()" class="music-btn">
+                    <span id="musicIcon">🔇</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Slide 1: Welcome -->
+        <div class="slide active" id="slide1">
+            <div class="slide-content">
+                <div class="welcome-text">
+                    <h1 class="animated-title">Selamat Datang Sayang! 💖</h1>
+                    <div class="love-message">
+                        <div class="quote-icon">"</div>
+                        <p class="love-quote">
+                            <span id="typewriter">Aku gatau harus membuat kata-kata manis seperti apa, semua kata-kata menawan sudah tergambar dikamu, jadi yang kutau, aku hanya mencintaimu, SEKALI LAGI , HANYA ITU .</span>
+                        </p>
+                        <div class="quote-author">- a deepest my -</div>
+                    </div>
+                </div>
+                <div class="floating-elements">
+                    <div class="rose">🌹</div>
+                    <div class="star">✨</div>
+                    <div class="butterfly">🦋</div>
+                    <div class="sparkle">💫</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Your Character (Cewek) -->
+        <div class="slide" id="slide2">
+            <div class="slide-content">
+                <h2 class="slide-title">✨ Karaktermu yang Menawan ✨</h2>
+                <div class="character-profile">
+                    <div class="avatar-section">
+                        <div class="avatar female">👩‍💼</div>
+                        <h3>Kamu - Minggu Pon</h3>
+                        <p class="birth-date">16 Juni 2002</p>
+                        <div class="weton-info">
+                            <span class="day-badge">Minggu (5)</span>
+                            <span class="plus">+</span>
+                            <span class="pasaran-badge">Pon (7)</span>
+                            <span class="equals">=</span>
+                            <span class="neptu-badge">12</span>
+                        </div>
+                    </div>
+
+                    <div class="character-details">
+                        <div class="character-section">
+                            <h4>🌟 Sifat Positif</h4>
+                            <ul class="trait-list positive">
+                                <li><strong>Pekerja Keras:</strong> Selalu tekun dan tidak pernah menyerah[21][26]</li>
+                                <li><strong>Berwibawa:</strong> Memiliki aura kepemimpinan yang alami[21]</li>
+                                <li><strong>Komunikatif:</strong> Pandai berbicara dan mudah diterima orang[22]</li>
+                                <li><strong>Setia & Penyayang:</strong> Loyal dan penuh cinta kasih[24][26]</li>
+                                <li><strong>Pemberani:</strong> Berani membela kebenaran[21][28]</li>
+                                <li><strong>Mental Kuat:</strong> Tahan menghadapi cobaan hidup[22][28]</li>
+                            </ul>
+                        </div>
+
+                        <div class="character-section">
+                            <h4>⚠️ Yang Perlu Dijaga</h4>
+                            <ul class="trait-list negative">
+                                <li><strong>Terlalu Aktif:</strong> Kadang tidak bisa diam dan usil[21][28]</li>
+                                <li><strong>Banyak Musuh:</strong> Karena terlalu berani, sering punya konflik[21][26]</li>
+                                <li><strong>Keras Kepala:</strong> Sulit diatur ketika sudah berkeyakinan[22]</li>
+                            </ul>
+                        </div>
+
+                        <div class="character-section special">
+                            <h4>💎 Keistimewaan Khusus</h4>
+                            <div class="special-info">
+                                <p><strong>Pancasuda Bumi Kapetak:</strong> Golongan orang yang aktif, pekerja keras, dan bermental tangguh[21][28]</p>
+                                <p><strong>Tulang Wangi:</strong> Memiliki aura positif yang menarik rezeki dan cinta[12]</p>
+                                <p><strong>Daya Tarik Tinggi:</strong> Mudah memikat lawan jenis karena kepribadian yang menarik[24][26]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: My Character (Cowok) -->
+        <div class="slide" id="slide3">
+            <div class="slide-content">
+                <h2 class="slide-title">💪 Karakterku yang Mencintaimu 💪</h2>
+                <div class="character-profile">
+                    <div class="avatar-section">
+                        <div class="avatar male">👨‍💼</div>
+                        <h3>Aku - Selasa Kliwon</h3>
+                        <p class="birth-date">18 Juli 2000</p>
+                        <div class="weton-info">
+                            <span class="day-badge male">Selasa (3)</span>
+                            <span class="plus">+</span>
+                            <span class="pasaran-badge male">Kliwon (8)</span>
+                            <span class="equals">=</span>
+                            <span class="neptu-badge male">11</span>
+                        </div>
+                    </div>
+
+                    <div class="character-details">
+                        <div class="character-section">
+                            <h4>🌟 Sifat Positif</h4>
+                            <ul class="trait-list positive">
+                                <li><strong>Setia & Tulus:</strong> Sangat loyal dan jujur dalam hubungan[25][27]</li>
+                                <li><strong>Pandai Bicara:</strong> Cerdas dalam berkomunikasi dan luas wawasan[29][33]</li>
+                                <li><strong>Ambisius:</strong> Pantang menyerah dan selalu berusaha keras[29][33]</li>
+                                <li><strong>Intuisi Tajam:</strong> Memiliki firasat kuat tentang situasi[6]</li>
+                                <li><strong>Tegas & Berani:</strong> Tidak mudah dipengaruhi orang lain[27]</li>
+                                <li><strong>Protektif:</strong> Selalu siap melindungi orang yang dicintai[31]</li>
+                            </ul>
+                        </div>
+
+                        <div class="character-section">
+                            <h4>⚠️ Yang Perlu Dijaga</h4>
+                            <ul class="trait-list negative">
+                                <li><strong>Mudah Marah:</strong> Temperamen yang kadang sulit dikontrol[29][33]</li>
+                                <li><strong>Keras Kepala:</strong> Sulit mengubah pendirian jika sudah yakin[27][29]</li>
+                                <li><strong>Pencemburu:</strong> Terlalu protektif pada pasangan[29][31]</li>
+                                <li><strong>Tidak Sabar:</strong> Ingin semua berjalan cepat sesuai keinginan[31][33]</li>
+                            </ul>
+                        </div>
+
+                        <div class="character-section special">
+                            <h4>💎 Keistimewaan Khusus</h4>
+                            <div class="special-info">
+                                <p><strong>Anggoro Kasih:</strong> Memiliki daya tarik tinggi dan aura pemikat[31][33]</p>
+                                <p><strong>Khodam Ratu Kidul & Macan Kumbang:</strong> Didampingi kekuatan spiritual pelindung[31]</p>
+                                <p><strong>Aras Tuding:</strong> Sering jadi pusat perhatian dan dipercaya orang[6][33]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Compatibility Analysis -->
+        <div class="slide" id="slide4">
+            <div class="slide-content">
+                <h2 class="slide-title">💕 Analisis Kecocokan Kita 💕</h2>
+                <div class="compatibility-analysis">
+                    <div class="compatibility-header">
+                        <div class="person-summary">
+                            <span class="weton-name">Minggu Pon</span>
+                            <span class="neptu">12</span>
+                        </div>
+                        <div class="heart-connector">💖</div>
+                        <div class="person-summary">
+                            <span class="weton-name">Selasa Kliwon</span>
+                            <span class="neptu male">11</span>
+                        </div>
+                    </div>
+
+                    <div class="total-calculation">
+                        <div class="calculation-step">
+                            <span>Total Neptu: 12 + 11 = </span>
+                            <span class="big-number">23</span>
+                        </div>
+                        <div class="result-name">SUJANAN</div>
+                    </div>
+
+                    <div class="compatibility-grid">
+                        <div class="analysis-card strength">
+                            <div class="card-header">
+                                <span class="icon">✨</span>
+                                <h3>Kekuatan Hubungan</h3>
+                            </div>
+                            <ul>
+                                <li>Sama-sama pekerja keras dan ambisius</li>
+                                <li>Komunikasi yang baik karena pandai bicara</li>
+                                <li>Saling melindungi dan setia</li>
+                                <li>Mental kuat menghadapi tantangan bersama</li>
+                                <li>Daya tarik tinggi satu sama lain</li>
+                            </ul>
+                        </div>
+
+                        <div class="analysis-card challenge">
+                            <div class="card-header">
+                                <span class="icon">⚠️</span>
+                                <h3>Tantangan Hubungan</h3>
+                            </div>
+                            <ul>
+                                <li>Sama-sama keras kepala bisa menimbulkan konflik</li>
+                                <li>Temperamen yang mudah tersulut emosi</li>
+                                <li>Potensi saling cemburu karena daya tarik tinggi</li>
+                                <li>Kedua pihak ingin mendominasi hubungan</li>
+                                <li>Risiko pertengkaran karena ego tinggi</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="love-advice-box">
+                        <h4>💡 Tips untuk Hubungan Harmonis:</h4>
+                        <p>Meski termasuk kategori "Sujanan" yang rawan konflik, kalian berdua memiliki kekuatan mental dan kesetiaan yang luar biasa. Kunci sukses: <strong>komunikasi terbuka, saling menahan ego, dan fokus pada cinta yang mengikat kalian</strong>. Dengan komitmen kuat, hubungan kalian bisa jadi contoh kesetiaan sejati!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Zodiac Compatibility -->
+        <div class="slide" id="slide5">
+            <div class="slide-content">
+                <h2 class="slide-title">⭐ Zodiak Compatibility ⭐</h2>
+                <div class="zodiac-section">
+                    <div class="zodiac-match">
+                        <div class="zodiac-person">
+                            <div class="zodiac-circle gemini">♊</div>
+                            <h3>Gemini</h3>
+                            <p class="zodiac-date">16 Juni 2002</p>
+                            <div class="zodiac-traits">
+                                <span class="trait">Cerdas</span>
+                                <span class="trait">Komunikatif</span>
+                                <span class="trait">Adaptif</span>
+                                <span class="trait">Kreatif</span>
+                            </div>
+                        </div>
+
+                        <div class="compatibility-score">
+                            <div class="score-circle">
+                                <span class="percentage">85%</span>
+                                <span class="label">Compatible</span>
+                            </div>
+                        </div>
+
+                        <div class="zodiac-person">
+                            <div class="zodiac-circle cancer">♋</div>
+                            <h3>Cancer</h3>
+                            <p class="zodiac-date">18 Juli 2000</p>
+                            <div class="zodiac-traits">
+                                <span class="trait">Peduli</span>
+                                <span class="trait">Setia</span>
+                                <span class="trait">Protektif</span>
+                                <span class="trait">Intuitif</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zodiac-details">
+                        <div class="zodiac-analysis">
+                            <h4>💫 Why You're Perfect Together</h4>
+                            <div class="zodiac-points">
+                                <div class="point">
+                                    <span class="point-icon">🧠</span>
+                                    <div class="point-text">
+                                        <strong>Mental Connection:</strong> Gemini's wit matches Cancer's emotional intelligence
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <span class="point-icon">🏠</span>
+                                    <div class="point-text">
+                                        <strong>Home & Adventure:</strong> Cancer provides stability, Gemini brings excitement
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <span class="point-icon">💬</span>
+                                    <div class="point-text">
+                                        <strong>Communication:</strong> Both love deep conversations and sharing thoughts
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <span class="point-icon">❤️</span>
+                                    <div class="point-text">
+                                        <strong>Loyalty:</strong> Both highly value commitment and faithfulness
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="zodiac-prediction">
+                            <h4>🔮 Relationship Forecast</h4>
+                            <p>Your relationship blends Cancer's nurturing nature with Gemini's intellectual curiosity. Cancer will provide the emotional security Gemini needs, while Gemini will keep things interesting with new ideas and adventures. Together, you create a perfect balance of heart and mind! 💕</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Final Message -->
+        <div class="slide" id="slide6">
+            <div class="slide-content">
+                <h2 class="slide-title">💖TERUNTUK FIRA MAULANI PRAMUKTI💖</h2>
+                <div class="final-message">
+                    <div class="message-content">
+                        <div class="big-heart">💕</div>
+                        <h3>Apapun kata ramalan...</h3>
+                        <p class="final-quote">
+                            Yang terpenting bukan angka neptu atau bintang zodiak, tapi <strong>aku yang akan selalu mencintaimu</strong> dan <strong>kita yang akan sama2 memperjuangkannya</strong>  dalam suka maupun duka.
+                        </p>
+                        <p class="promise">
+                           ini harusnya bagian yang diisi kalimat-kalimat janji tapi orang kayak kamu cuma bisa dikasih bukti kan ya ?.
+                        </p>
+                        <div class="signature">
+                            <p>Fiqru,</p>
+                            <p class="name">Yang selalu mencintaimu ❤️</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Cintaku Untukmu</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">1</div>
+                            <div class="stat-label">Hati yang Utuh</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">Forever</div>
+                            <div class="stat-label">Lamanya Komitmen</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="slide-navigation">
+            <button class="nav-btn prev-btn" onclick="previousSlide()" id="prevBtn">
+                <span class="nav-icon">←</span>
+                <span class="nav-text">Previous</span>
+            </button>
+            
+            <div class="slide-dots">
+                <span class="dot active" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+                <span class="dot" onclick="goToSlide(3)"></span>
+                <span class="dot" onclick="goToSlide(4)"></span>
+                <span class="dot" onclick="goToSlide(5)"></span>
+                <span class="dot" onclick="goToSlide(6)"></span>
+            </div>
+            
+            <button class="nav-btn next-btn" onclick="nextSlide()" id="nextBtn">
+                <span class="nav-text">Next</span>
+                <span class="nav-icon">→</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
